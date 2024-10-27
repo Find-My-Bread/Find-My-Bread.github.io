@@ -1,30 +1,393 @@
----
-layout: home 
-author_profile: true
-classes: wide
-date: 2022-09-10
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Where's My Bread</title>
+    <!-- Add any CSS stylesheets here -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        /* Additional styles */
+        h1, h2, h3, h4, h5 {
+            color: #333;
+        }
+        .header-image {
+            width: 100%;
+            height: auto;
+        }
+        .keywords {
+            font-style: italic;
+            color: #555;
+        }
+        .code-block {
+            background-color: #f5f5f5;
+            padding: 10px;
+            overflow-x: auto;
+        }
+        .figure {
+            text-align: center;
+        }
+        .figure img {
+            max-width: 100%;
+            height: auto;
+        }
+        .figure figcaption {
+            font-style: italic;
+            color: #555;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+        }
+        .video-container iframe, 
+        .video-container object, 
+        .video-container embed {
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .image-row {
+            text-align: center;
+        }
+        .image-row img {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
 
----
+    <h1>Where's My Bread</h1>
+    <img src="/images/projects/sky.png" alt="Where's My Bread" class="header-image">
 
-<header>
-  <h1>Welcome</h1>
-</header>
+    <div class="image-row">
+        <!-- Repeated images -->
+        <img src="/images/projects/1.png" width="37" alt="Decoration" />
+        <img src="/assets/splash2/3.png" width="80" alt="Decoration" />
+        <!-- Repeat as necessary -->
+    </div>
 
-<main>
-  <section>
-      <p>Welcome to my page. Which more recently is a collection of random stuff, thoughts, and memories. This used to be an academic page but that has been migrated to a new one. Nowadays this is just my personal expression mood board where I can really just talk to myself and whoever reads this page. You might learn something about me or my past from this page but this is all just there to serve as a log for my future self. A lot of emotions and memories are displayed here with the ultimate goal of chasing happiness.</p>
-  </section>
+    <h2>Keywords</h2>
+    <p class="keywords">Pygame, Game Development, Physics Engine, Artificial Intelligence</p>
 
-  <section>
-      <h2>Brief Introduction</h2>
-      <p>Hello, my name is Simon Lee. I am a boy trying to figure out my place in the world. I just try a whole bunch of things hoping that it sticks, and the truth is I have no idea what I am doing or where I am going. However, I have a current passion and I am going as deep as it will take me. At the very least, I know I am giving it my best, and that is sometimes all I can ask for.</p>
-  </section>
+    <div class="image-row">
+        <!-- Repeated images -->
+        <img src="/images/projects/1.png" width="37" alt="Decoration" />
+        <img src="/assets/splash2/3.png" width="80" alt="Decoration" />
+        <!-- Repeat as necessary -->
+    </div>
 
-  {% include feature_row %}
-</main>
+    <h2>Game Trailer</h2>
+    <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/bIbWen4h_qQ" title="Where's My Bread Trailer" frameborder="0" allowfullscreen></iframe>
+    </div>
 
-<footer>
-  <p>&copy; 2024 Simon Lee. All rights reserved.</p>
-</footer>
+    <div class="image-row">
+        <!-- Repeated images -->
+        <img src="/images/projects/1.png" width="37" alt="Decoration" />
+        <img src="/assets/splash2/3.png" width="80" alt="Decoration" />
+        <!-- Repeat as necessary -->
+    </div>
 
+    <h2>Premise</h2>
+    <figure class="figure">
+        <img src="images/projects/title.png" alt="Where's My Bread official logo">
+        <figcaption>Where's My Bread official logo</figcaption>
+    </figure>
 
+    <p>Welcome to <strong>Where's My Bread</strong>, a 2D platformer game created entirely by me, Simon Lee. The game features two primary objectives that award maximum points. The first is to collect as many pieces of bread as are scattered around Paris, France. The second is to reach the end goal flag as quickly as possible. If you're familiar with <em>Super Mario Bros</em>, you'll find the concept similar, but with a unique twist where the two features are split up.</p>
+
+    <p>The backstory centers around a baker whose bread has been stolen and scattered throughout the city of Paris. Your mission is to help the baker retrieve his lost bread while navigating through the bustling streets and iconic landmarks of the city. As you progress, you'll encounter various obstacles and enemies that add to the challenge. While the current version provides an engaging experience, future releases are planned to introduce more characters and expand the game world.</p>
+
+    <h2>Design</h2>
+
+    <p>The most time-consuming aspect of the game's development was the art. Every visual element, from the players and enemies to the backdrop of Paris and the Eiffel Tower, was hand-drawn over the course of two and a half weeks. I utilized the <a href="https://www.aseprite.org/">Aseprite</a> software to create the pixel art that gives the game its distinct 8-bit aesthetic. The character design is heavily inspired by Madeline from one of my favorite video games, <a href="https://store.steampowered.com/app/504230/Celeste/">Celeste</a>. I aimed to capture the charm and simplicity of classic platformers while adding my own artistic touch.</p>
+
+    <div class="image-row">
+        <!-- Repeated images -->
+        <img src="/images/projects/1.png" width="37" alt="Decoration" />
+        <img src="/assets/splash2/3.png" width="80" alt="Decoration" />
+        <!-- Repeat as necessary -->
+    </div>
+
+    <h2>Physics Engine</h2>
+
+    <p>Developing the physics engine was one of the most challenging yet rewarding parts of creating <em>Where's My Bread</em>. It made me deeply consider the mechanics we often take for granted in games, such as gravity, collision detection, and character movement. Crafting these elements from scratch provided a deeper understanding of how games simulate real-world physics.</p>
+
+    <p>One of the key features I implemented was the ability to customize how high the player could jump and how quickly gravity would pull them back down. This required fine-tuning variables and constants to achieve a balance that felt natural and enjoyable. Below is a snippet from the <code>Player</code> class that demonstrates how movement and physics are handled:</p>
+
+    <div class="code-block">
+    <pre><code class="language-python">
+def move(self, moving_left, moving_right):
+    # reset movement variables
+    screen_scroll = 0
+    dx = 0
+    dy = 0
+
+    # assign movement variables
+    if moving_left:
+        dx = -self.speed
+        self.flip = True
+        self.direction = -1
+    if moving_right:
+        dx = self.speed
+        self.flip = False
+        self.direction = 1
+
+    # Jumping mechanics
+    if self.jump and not self.in_air:
+        self.vel_y = -9
+        self.jump = False
+        self.in_air = True
+
+    # Apply gravity
+    self.vel_y += GRAVITY
+    if self.vel_y > 10:
+        self.vel_y = 10
+    dy += self.vel_y
+
+    # Collision detection
+    for tile in world.obstacle_list:
+        # Horizontal collision
+        if tile[1].colliderect(self.rect.x + dx, self.rect.y, self.width, self.height):
+            dx = 0
+            if self.char_type == 'enemy2':
+                self.direction *= -1
+                self.move_counter = 0
+        # Vertical collision
+        if tile[1].colliderect(self.rect.x, self.rect.y + dy, self.width, self.height):
+            if self.vel_y < 0:
+                dy = tile[1].bottom - self.rect.top
+                self.vel_y = 0
+            elif self.vel_y >= 0:
+                dy = tile[1].top - self.rect.bottom
+                self.vel_y = 0
+                self.in_air = False
+
+    # Update player position
+    self.rect.x += dx
+    self.rect.y += dy
+
+    return screen_scroll, time_complete
+    </code></pre>
+    </div>
+
+    <p>In this code segment, you can see how movement, gravity, and collision detection are managed. The player's velocity is adjusted based on user input and environmental factors, ensuring a smooth and responsive gameplay experience.</p>
+
+    <div class="image-row">
+        <!-- Repeated images -->
+        <img src="/images/projects/1.png" width="37" alt="Decoration" />
+        <img src="/assets/splash2/3.png" width="80" alt="Decoration" />
+        <!-- Repeat as necessary -->
+    </div>
+
+    <h2>Enemy Artificial Intelligence</h2>
+
+    <p>Implementing enemy AI added another layer of complexity and excitement to the game. The enemies, designed as mafia men, patrol the levels and engage the player when detected. They aim to hinder the player's progress, making the journey to recover the bread more challenging.</p>
+
+    <h3>Enemy Movement</h3>
+
+    <p>The enemies exhibit a pseudo-random patrol behavior. They move back and forth within a certain area, occasionally changing direction based on a random chance. This unpredictability ensures that the gameplay remains engaging and prevents players from easily predicting enemy patterns.</p>
+
+    <p>Here's how the randomness is implemented:</p>
+
+    <div class="code-block">
+    <pre><code class="language-python">
+if random.randint(1, 200) == 1:
+    self.direction *= -1
+    </code></pre>
+    </div>
+
+    <p>This code gives the enemy a 0.5% chance to change direction each frame, creating a natural-looking patrol behavior without the need for complex algorithms.</p>
+
+    <h3>Enemy Attack</h3>
+
+    <p>The enemies are equipped with a "vision" rectangle that represents their line of sight. If the player enters this area, the enemy will initiate an attack sequence, firing a projectile towards the player. This mechanic adds an element of stealth and strategy, encouraging players to avoid detection or prepare for combat.</p>
+
+    <figure class="figure">
+        <img src="/images/projects/hitbox.jpg" alt="Enemy vision hitbox">
+        <figcaption>Visualization of enemy vision and hitboxes</figcaption>
+    </figure>
+
+    <p>The following code demonstrates how the enemy AI checks for the player's presence and reacts accordingly:</p>
+
+    <div class="code-block">
+    <pre><code class="language-python">
+def ai(self):
+    if self.alive and player.alive:
+        if self.idling == False and random.randint(1, 200) == 1:
+            self.idling = True
+            self.idling_counter = 500
+        if self.vision.colliderect(player.rect):
+            self.shoot()
+        else:
+            # Patrol behavior
+            self.move(...)
+    </code></pre>
+    </div>
+
+    <p>By combining simple randomization with collision detection, the enemy AI provides a challenging and dynamic obstacle for the player.</p>
+
+    <div class="image-row">
+        <!-- Repeated images -->
+        <img src="/images/projects/1.png" width="37" alt="Decoration" />
+        <img src="/assets/splash2/3.png" width="80" alt="Decoration" />
+        <!-- Repeat as necessary -->
+    </div>
+
+    <h2>Core Components and Development</h2>
+
+    <p>The development of <em>Where's My Bread</em> was an enriching experience that allowed me to delve into various aspects of game development, including programming, art, and design. Here are some of the core components and the development process:</p>
+
+    <h3>Game Engine and Libraries</h3>
+
+    <p>The game was developed using <a href="https://www.pygame.org/">Pygame</a>, a set of Python modules designed for writing video games. Pygame provides functionality for rendering graphics, handling input, and managing game assets, which made it an ideal choice for this project.</p>
+
+    <h3>Level Design</h3>
+
+    <p>The levels were designed using a combination of tile maps and custom sprites. I created a level editor that allowed me to place tiles and objects efficiently. The level data is stored in CSV files, which the game reads to construct the world dynamically.</p>
+
+    <h3>Graphics and Art</h3>
+
+    <p>All the game's graphics were hand-drawn using Aseprite. This includes character animations, environmental assets, and UI elements. By creating the art myself, I ensured that the visual style remained consistent and aligned with the game's theme.</p>
+
+    <h3>Sound and Music</h3>
+
+    <p>Audio plays a significant role in enhancing the gaming experience. I sourced sound effects and background music that complement the game's atmosphere. The Pygame mixer module was used to integrate audio playback seamlessly.</p>
+
+    <h3>User Interface</h3>
+
+    <p>The game's UI includes menus, buttons, and HUD elements that display important information like health and collected items. I created custom button classes to handle user interactions and transitions between different game states.</p>
+
+    <h3>Challenges and Learning</h3>
+
+    <p>Throughout the development process, I encountered various challenges, such as optimizing collision detection and ensuring smooth frame rates. Debugging these issues required patience and problem-solving skills. Ultimately, overcoming these obstacles contributed significantly to my growth as a developer.</p>
+
+    <div class="image-row">
+        <!-- Repeated images -->
+        <img src="/images/projects/1.png" width="37" alt="Decoration" />
+        <img src="/assets/splash2/3.png" width="80" alt="Decoration" />
+        <!-- Repeat as necessary -->
+    </div>
+
+    <h2>Code</h2>
+
+    <p>This project was an independent endeavor completed during the summer of 2021. Building a game from scratch allowed me to apply and enhance my programming skills extensively. Below is an overview of the project's structure:</p>
+
+    <ul>
+        <li><strong>audio</strong> - Contains music and sound effects for the game.</li>
+        <li><strong>buttons</strong> - Includes the 8-bit art button files (.png).</li>
+        <li><strong>img</strong> - Contains character, enemy, level, and background sprites in 8-bit art.</li>
+        <li><strong>button.py</strong> - A module to generate buttons within the Pygame environment.</li>
+        <li><strong>highscore.txt</strong> - A text file that saves the highest score.</li>
+        <li><strong>level1_data.csv</strong> - The design of the platformer based on numerical arrays.</li>
+        <li><strong>level_editor_tut.py</strong> - The platform level editor.</li>
+        <li><strong>paris.py</strong> - The main source code for the game.</li>
+        <li><strong>scores.txt</strong> - A text file that saves the last played score.</li>
+    </ul>
+
+    <p>You can access the full source code on <a href="https://github.com/Simonlee711/Basic_Game">GitHub</a>.</p>
+
+    <div class="image-row">
+        <!-- Repeated images -->
+        <img src="/images/projects/1.png" width="37" alt="Decoration" />
+        <img src="/assets/splash2/3.png" width="80" alt="Decoration" />
+        <!-- Repeat as necessary -->
+    </div>
+
+    <h2>How to Play the Game</h2>
+
+    <p>To run the game, ensure you have the Pygame package installed:</p>
+
+    <div class="code-block">
+    <pre><code>
+pip install pygame==1.9.6
+    </code></pre>
+    </div>
+
+    <p>Then, execute the following command:</p>
+
+    <div class="code-block">
+    <pre><code>
+python3 paris.py
+    </code></pre>
+    </div>
+
+    <figure class="figure">
+        <img src="images/projects/tower.png" alt="Au Revoir">
+        <figcaption>Au Revoir</figcaption>
+    </figure>
+
+    <h2>Full Source Code</h2>
+
+    <p>Below is the main source code for <em>Where's My Bread</em>. This code serves as the backbone of the game, handling everything from rendering graphics to processing user input. I have included comments throughout the code to explain each section's functionality.</p>
+
+    <div class="code-block">
+    <!-- Include the source code here -->
+    <pre><code class="language-python">
+# platformer game
+__author__ = 'Simon Lee: Game Developer, simonlee711@gmail.com'
+
+import pygame
+import pygame.freetype
+from pygame import mixer
+import random
+import csv
+import time
+from pygame import time
+import button
+from pygame import draw 
+import pickle
+
+# creation
+mixer.init()
+pygame.init()
+
+# Screen size - adjustable
+SCREEN_WIDTH = 800
+SCREEN_HEIGHT = int(SCREEN_WIDTH * 0.8)
+
+# Building the screen and caption
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+pygame.display.set_caption("私のパンはどこですか?")
+
+# set frame rate
+clock = pygame.time.Clock()
+FPS = 100
+
+# Define game variables
+GRAVITY = 0.5
+SCROLL_THRESH = 300
+ROWS = 16
+COLS = 350
+TILE_SIZE = SCREEN_HEIGHT // ROWS
+TILE_TYPES = 66
+screen_scroll = 0
+bg_scroll = 0
+level = 1
+start_game = False
+controls_menu = False
+credits_menu = False
+leaderboards = False
+version_menu = False
+
+# Define player action variables
+moving_left = False
+moving_right = False
+shoot = False
+
+# ... [Rest of the code]
+    </code></pre>
+    </div>
+
+    <p>For brevity, the entire source code has been truncated. You can view the full code on the <a href="https://github.com/Simonlee711/Basic_Game">GitHub repository</a>.</p>
+
+    <p>Thank you for taking the time to explore <em>Where's My Bread</em>. I hope you enjoy playing it as much as I enjoyed creating it!</p>
+
+</body>
+</html>
